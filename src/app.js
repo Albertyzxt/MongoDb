@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.json());
 
+const petRoutes = require('./routes/petRoutes.js');
 const clienteRoutes = require('./routes/clienteRoutes.js');
 
 // Conectar ao banco de dados
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Rotas
 app.use('/api/clientes', clienteRoutes);
+app.use('/api/pets', petRoutes);
 
 
 app.listen(port, () => {
